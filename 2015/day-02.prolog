@@ -13,8 +13,7 @@ ribbon(size(L,W,H), N) :-
   N is L*W*H + 2*(L+W+H-max(L,max(W,H))).
 
 answers(N1, N2) :-
-  phrase_from_file(sizes(Ss), 'input-2.txt'),
+  phrase_from_file(sizes(Ss), 'input-02.txt'),
   maplist(area,   Ss, As), sum_list(As, N1),
   maplist(ribbon, Ss, Rs), sum_list(Rs, N2).
 
-% phrase_from_file(sizes(Ss), 'input-2.txt').
